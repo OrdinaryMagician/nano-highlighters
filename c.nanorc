@@ -1,0 +1,45 @@
+syntax "c" "\.(c|C)$" "\.(h|H)$"
+## default
+color brightwhite ".+"
+## assume these are macro constants
+color brightcyan "\<[A-Z_][0-9A-Z_]*\>"
+## types
+color brightmagenta "\<(float|double|bool|_Bool|char|int|enum|void|struct|union)\>"
+color brightblue "\<[a-zA-Z_][a-zA-Z_0-9]*_t\>"
+## modifiers
+color magenta "\<(long|short|static|const|extern|(un)?signed|inline|volatile|register)\>"
+## compiler stuff
+color red "__attribute__[[:space:]]*\(\([^)]*\)\)"
+color red "__mode__[[:space:]]*\([^)]*\)"
+color red "__(aligned|asm|builtin|hidden|inline|packed|restrict|section|typeof|weak)__"
+color red "\<__builtin_[a-zA-Z_0-9]+\>"
+color red "\<__[a-zA-Z_0-9]+\>"
+color blue "\<(sizeof|typedef)\>"
+## keywords
+color brightred "\<(for|if|while|do|else|case|default|switch|goto|continue|break|return)\>"
+## labels
+icolor brightyellow "^[A-Z_0-9]+:"
+## operators
+color yellow "[.:;,+*|=!%?~]" "<" ">" "/" "-" "&"
+## numbers
+icolor brightyellow "\<[-+]?([1-9][0-9]*|0[0-7]*|0b[0-1]+|0x[0-9A-F]+)([U][L]?|[L][U]?)?\>"
+icolor brightyellow "\<[-+]?([0-9]+\.[0-9]*|[0-9]*\.[0-9]+)([EP][+-]?[0-9]+)?[FL]?"
+icolor brightyellow "\<[-+]?([0-9]+[EP][+-]?[0-9]+)[FL]?"
+color brightyellow "\<(true|false)\>"
+## parentheses and braces
+color white "[(){}]" "\[" "\]"
+## macros
+color cyan "^[[:space:]]*#[[:space:]]*(define|include|(un|ifn?)def|endif|el(if|se)|if|warning|error|pragma)" "(\<defined\>|##?)"
+## strings
+color brightgreen "<[^=         ]*>" "L?"(\\.|[^"])*""
+color brightgreen "'([^'\]|(\\["'abfnrtv\\]))'" "'\\(([0-3]?[0-7]{1,2}))'" "'\\x[0-9A-Fa-f]{1,2}'"
+## printf escapes
+# TODO
+## escapes
+color green "\\([abfnrtv\'"?0e]|0[0-7]{2,3}|x[0-9a-fA-F]{2,2}|u[0-9a-fA-F]{4,4}|$)"
+## trailing whitespace, leading spaces
+color ,green "[[:space:]]+$" "^\[[:space:]]* +"
+## comments
+color brightblack "(^|[[:space:]])//.*$"
+color brightblack start="(^|[^/])/\*" end="\*/"
+color brightwhite,red "\<TODO\>"

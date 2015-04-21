@@ -1,0 +1,21 @@
+syntax "aosbuild" "build$"
+## default
+color brightwhite ".+"
+## functions
+color brightblue "\<aos_([rg]msg|(add)?[cl]flags|pkg|compiler|linker|pkgconfig|bin|(add)?src|main)\>"
+## variables
+color magenta "\<[A-Z_][A-Z_0-9]*\>"
+color brightmagenta "\<([CL]FLAGS|SRCO?|CC|LN|BIN|CHANGED|FORCE|CLEANALL)\>"
+## operators
+color white "[.:;,+*|=!%?~$]" "<" ">" "/" "-" "&" "[(){}]" "\[" "\]" "\\" "'" "\""
+## numbers
+color brightyellow "\<[0-9]+\>"
+## shell thingies
+color red "\<(for|in|do(ne)?|if|fi|then|el(se|if))\>"
+## trailing whitespace, leading tabs
+color ,green "[[:space:]]+$" "^\[[:space:]]*	+"
+## source
+color green "^source .*$"
+color brightgreen "^source "
+## comments
+color cyan "(^|[[:space:]]|[^\])#.*$"

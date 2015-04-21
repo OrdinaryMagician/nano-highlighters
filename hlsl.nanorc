@@ -1,0 +1,46 @@
+syntax "hlsl" "\.(fx)$"
+## default
+color brightwhite "^.+$"
+## operators
+color yellow "[.:;,+*|=!%?]" "<" ">" "/" "-" "&"
+## numbers
+color brightyellow "\<[-+]?([1-9][0-9]*|0[0-7]*|0x[0-9a-fA-F]+)([uU][lL]?|[lL][uU]?)?\>"
+color brightyellow "\<[-+]?([0-9]+\.[0-9]*|[0-9]*\.[0-9]+)([EePp][+-]?[0-9]+)?[fFlL]?"
+color brightyellow "\<[-+]?([0-9]+[EePp][+-]?[0-9]+)[fFlL]?"
+## keywords
+color green "\<(AppendStructuredBufer|asm|asm_fragment)\>"
+color green "\<(BlendState|bool|break|Buffer|ByteAddressBuffer)\>"
+color green "\<(case,cbuffer,centroid,class,column_major|compile|compile_fragment|CompileShader|const|continue|ComputeShader|ConsumeStructuredBuffer)\>"
+color green "\<(default,DepthStencilState|DepthStencilView|discard|do|double|DomainShader|dword)\>"
+color green "\<(else|export|extern)\>"
+color green "\<(false|float|for|fxgroup)\>"
+color green "\<(GeometryShader|groupshared)\>"
+color green "\<(half|Hullshader)\>"
+color green "\<(if|in|inline|inout|InputPatch|int|interface)\>"
+color green "\<(line|lineadj|linear|LineStream)\>"
+color green "\<(matrix|min16float|min10float|min16int|min12int|min16uint)\>"
+color green "\<(namespace|nointerpolation|noperspective|NULL)\>"
+color green "\<(out|OutputPatch)\>"
+color green "\<(packoffset|pass|pixelfragment|PixelShader|point|PointStream|precise)\>"
+color green "\<(RasterizerState|RenderTargetView|return|register|row_major|RWBuffer|RWByteAddressBuffer|RWStructuredBuffer|RWTexture1D|RWTexture1DArray|RWTexture2D|RWTexture2DArray|RWTexture3D)\>"
+color green "\<(sample|sampler|sampler_state|SamplerState|SamplerComparisonState|shared|snorm|stateblock|stateblock_state|static|string|struct|switch|StructuredBuffer)\>"
+color green "\<(tbuffer|technique|technique10|technique11|tex|texture|Texture1D|Texture1DArray|Texture2D|Texture2DArray|Texture2DMS|Texture2DMSArray|Texture3D|TextureCube|TextureCubeArray|true|typedef|triangle|triangleadj|TriangleStream)\>"
+color green "\<(uint|uniform|unorm|unsigned)\>"
+color green "\<(vector|vertexfragment|VertexShader|void|volatile)\>"
+color green "\<(while)\>"
+## keywords with scalar expansions
+color green "\<((float|int|uint|bool|min10float|min16float|min12int|min16int|min16uint)([1-4]|[1-4]x[1-4]))\>"
+## others
+color green "\<(tex|texture|sampler)[1-3]D\>"
+## parentheses and braces
+color magenta "[(){}]" "\[" "\]"
+## strings
+color cyan "<[^= 	]*>" ""(\\.|[^"])*""
+## trailing whitespace, leading spaces
+color ,green "[[:space:]]+$" "^\[[:space:]]* +"
+## comments
+color brightblack "(^|[[:space:]])//.*"
+color brightblack start="(^|[^/])/\*" end="\*/"
+color brightwhite,red "\<TODO\>"
+## macros
+color brightcyan "^[[:space:]]*#[[:space:]]*(define|include|(un|ifn?)def|endif|el(if|se)|if|warning|error)"

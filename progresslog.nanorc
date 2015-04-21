@@ -1,0 +1,23 @@
+syntax "progresslog" "^progresslog$"
+## default
+color brightblack ".+"
+## labels
+color brightmagenta "^.+:$"
+color magenta ":$"
+## todo
+color brightcyan "^ *- .+$"
+color cyan "^ *- "
+## done
+color brightwhite "^ *X .+$"
+color white "^ *X "
+## partial
+color brightyellow "^ *P .+$"
+color yellow "^ *P "
+## failed
+color brightred "^ *F .+$"
+color red "^ *F "
+## in progress
+color brightgreen "^ *C .+$"
+color green "^ *C "
+## trailing whitespace, leading tabs
+color ,green "[[:space:]]+$" "^	+"

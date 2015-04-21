@@ -1,0 +1,68 @@
+syntax "nasm" "\.([sS]|asm)$"
+## default
+color brightwhite ".+"
+## operators
+icolor yellow "[.:;,+*|=!%~]" "<" ">" "/" "-" "&" "\<(seg|wrt)\>"
+## sizes
+icolor white "\<(byte|[dqt]word)( ptr)?\>"
+## numbers
+icolor brightyellow "\<[-+]?([0-9]*|0x[0-9A-F]+|\$[0-9][0-9A-F]*|[0-9]+\.[0-9]*|[0-9]*\.[0-9]+|[0-9A-F]+H|[0-1]+B|[0-7]+Q|[0-9]+\.[0-9]*(e[-+][0-9]+)?)\>"
+## pseudoinstructions
+icolor green "\<((d|res)[bwdqt]|incbin|equ|times|org)\>"
+## instructions (includes standard x86 and mmx)
+icolor magenta "\<(aaa|aas|aad|aam|adc|add|and|arpl)\>"
+icolor magenta "\<(bound|bsf|bsr|bswap|bt|btc|btr|bts)\>"
+icolor magenta "\<(call|cbw|cwd|cdq|cwde|clc|cld|cli|clts|cmc|cmov(o|no|b|c|nae|ae|nb|nc|e|z|ne|nz|be|na|a|nbe|s|ns|p|pe|np|po|l|nge|ge|nl|le|ng|g|nle)|cmp|cmpsb|cmpsw|cmpsd|cmpxchg|cmpxchg486|cmpxchg8b|cpuid)\>"
+icolor magenta "\<(daa|das|dec|div)\>"
+icolor magenta "\<(emms|enter)\>"
+icolor magenta "\<(f2xm1|fabs|fadd|faddp|fbld|fbstp|fchs|fclex|fnclex|fcmov(o|no|b|c|nae|ae|nb|nc|e|z|ne|nz|be|na|a|nbe|s|ns|p|pe|np|po|l|nge|ge|nl|le|ng|g|nle)|fcom|fcomp|fcompp|fcomi|fcomip|fcos|fdecstp|fdisi|fndisi|feni|fneni|fdiv|fdivp|fdivr|fdivrp|ffree|fiadd|ficom|ficomp|fidiv|fidivr|fild|fist|fistp|fimul|fincstp|finit|fninit|fisub|fld|fld(1|l2e|l2t|lg2|ln2|pi|z)|fldcw|fldenv|fmul|fmulp|fnop|fpatan|fptan|fprem|fprem1|frndint|fsave|frstor|fscale|fsetpm|fsin|fsincos|fsqrt|fst|fstp|fstcw|fstenv|fstsw|fsub|fsubp|fsubr|fsubrp|ftst|fucom(p|pp|i|ip)?|fxam|fxch|fxtract|fyl2x|fyl2xp1)\>"
+icolor magenta "\<hlt\>"
+icolor magenta "\<(ibts|idiv|imul|in|inc|insb|insw|insd|int|int3|int1|icebp|int01|int0|invd|invlpg|iret|iretw|iretd)\>"
+icolor magenta "\<(jcxz|jecxz|jmp|j(o|no|b|c|nae|ae|nb|nc|e|z|ne|nz|be|na|a|nbe|s|ns|p|pe|np|po|l|nge|ge|nl|le|ng|g|nle))\>"
+icolor magenta "\<(lahf|lar|lds|les|lfs|lgs|lss|lea|leave|lgdt|lidt|lldt|lmsw|loadall|loadall286|lodsb|lodsw|lodsd|loop|loope|loopz|loopne|loopnz|lsl|ltr)\>"
+icolor magenta "\<(mov|movd|movq|movsb|movsw|movsd|movsx|movzx|mul)\>"
+icolor magenta "\<(neg|not|nop)\>"
+icolor magenta "\<(or|not|outsb|outsw|outsd)\>"
+icolor magenta "\<(packssdw|packsswb|packuswb|padd(b|w|d|sb|sq|usb|usw)|paddsiw|pand|pandn|paveb|pcmp(eq|gt)[bwd]|pdistrib|pmachriw|pmaddwd|pmagw|pmulhrw|pmulhriw|pmulhw|pmullw|pmv(o|no|b|c|nae|ae|nb|nc|e|z|ne|nz|be|na|a|nbe|s|ns|p|pe|np|po|l|nge|ge|nl|le|ng|g|nle)zb|pop|popa[wd]?|popf[wd]?|por|ps([rl]l[wdq]|ra[wd])|psub([bwd]|u?s[bw])|psubsiw|punpck[hl](bw|wd|dq)|push|pusha[wd]?|pushf[wd]?|pxor|rcl|rcr|rdmsr|rdpmc|rdtsc|ret|retf|retn|rol|ror|rsm)\>"
+icolor magenta "\<(sahf|sal|sar|salc|sbb|scasb|scasw|scasd|set(o|no|b|c|nae|ae|nb|nc|e|z|ne|nz|be|na|a|nbe|s|ns|p|pe|np|po|l|nge|ge|nl|le|ng|g|nle)|sgdt|sidt|sldt|shl|shr|shld|shrd|smi|smsw|stc|std|sti|stosb|stosw|stosd|str|sub)\>"
+icolor magenta "\<test\>"
+icolor magenta "\<umov\>"
+icolor magenta "\<(verr|verw)\>"
+icolor magenta "\<(wait|wbinvd|wrmsr)\>"
+icolor magenta "\<(xadd|xbts|xchg|xlatb|xor)\>"
+## SSE instructions (dear god why)
+icolor magenta "\<(add|cmp|cvtp[is]2|div|max|min|mova|movhl|movh|movlh|movl|movmsk|movnt|movu|mul|rcp|rsqrt|shuf|sqrt|sub|unpckh|unpkl|andn|and|or|xor)ps\>"
+icolor magenta "\<((add|cmp|comi|cvtsi2|div|max|min|mov|mul|rcp|rsqrt|sqrt|sub|ucomi)ss|cvtt?ss2si)\>"
+icolor magenta "\<(ldmxcsr|stmxcsr|pavgb|pavgw|pextrw|pinsrw|pmaxsw|pmaxub|pminsw|pminub|pmovmskb|pmulhuw|psadbw|pshufw)\>"
+icolor magenta "\<(add|andn|and|cmp|cvtdq2|cvtpi2|cvtps2|div|max|min|mova|movh|movl|movmsk|movu|mul|or|shuf|sqrt|sub|unpck|inpckl|xor)pd\>"
+icolor magenta "\<(add|cmp|comi|cvtsi2|div|max|min|mov|mul|sqrt|sub|ucomi)sd\>"
+icolor magenta "\<(cvtdq2ps|cvtpd2dq|cvtpd2pi|cvtpd2ps|cvtps2dq|cvtsd2si|cvtsd2ss|cvttpd2dq|cvttpd2pi|cvttps2dq|cvttsd2si|movdq2q|movdqa|movdqu|movq2dq|paddq|psubdq|pmuludq|pshufhw|pshuflw|psufd|pslldq|psrldq|punpckhqdq|punpcklqdq)\>"
+icolor magenta "\<(addsubpd|addsubps|haddpd|haddps|hsubpd|hsubps|movddup|movshdup|movsldup)\>"
+icolor magenta "\<(psignw|psignd|psugnb|pshufb|pmulhrsw|pmaddubsw|phsubw|phsubsw|phsubd|phaddw|phaddsw|phaddd|palignr|pabsw|pabsd|pabsb)\>"
+icolor magenta "\<(mpsadbw|phminposuw|pmulld|pmuldq|dpps|dppd|blendps|blendpd|blendvps|blendvpd|pblendvb|pblendw|pminsb|pmaxsb|pminuw|pmaxuw|pminud|pmaxud|pminsd|pmaxsd|roundps|roundss|roundpd|roundsd|insertps|pinsrb|pinsrd|pinsrq|extractps|pextrb|pextrw|pextrd|pextrq|pmovsxbw|pmovzxbw|pmovsxbd|pmovzxbd|pmovsxbq|pmovzxbq|pmovsxwd|pmovzxwd|pmovsxwq|pmovzxwq|pmovsxdq|pmovzxdq|ptest|pcmpeqq|packusdw|movntdqa)\>"
+icolor magenta "\<(lzcnt|popcnt|extrq|insertq|movntsd|movntss)\>"
+icolor magenta "\<(crc32|pcmpestri|pcmpestrm|pcmpistri|pcmpistrm|pcmpgtq)\>"
+## registers
+icolor brightmagenta "\<([er]?[abcd]x|[abcd][hl]|[er]?([bs]p|[sd]i)|[ecsdfg]s|(st|x?mm|[dt]r|)[0-7]|cr[0-4])\>"
+## sections
+icolor brightgreen "\.[A-Z0-9_\$#@~\.\?]+"
+## macros
+icolor brightblue "\%(i?define|undef|i?assign|(end)?macro|%\.+:|0|rotate|-1|if|elif|else|endif|ifdef|ifctx|ifidni?|ifid|ifnum|ifstr|error|rep|include|push|pop|repl)\>"
+icolor brightred "\<(__NASM_M(AJ|IN)OR__|__FILE__|__LINE__|struc|endstruc|istruc|at|iend|align|alignb|__SECT__)\>"
+## directives
+icolor red "\<(BITS|SECTION|SEGMENT|ABSOLUTE|EXTERN|GLOBAL|COMMON)\>"
+## labels
+icolor brightyellow "^[A-Z0-9_\$#@~\.\?]+:"
+## parentheses and braces
+color blue "[(){}]" "\[" "\]"
+## strings
+color brightcyan "<[^=         ]*>" ""(\\.|[^"])*\""
+color brightcyan "<[^=         ]*>" "'(\\.|[^'])*'"
+color brightcyan "<[^=         ]*>" "`(\\.|[^`])*`"
+## escapes
+color cyan "\\([abfnrtv\\\'\"\?0e]|0[0-7]{3,3}|x[0-9a-fA-F]{2,2}|u[0-9a-fA-F]{4,4})"
+## trailing whitespace
+color ,green "[[:space:]]+$" "^[[:space:]]*\ +"
+## comments
+icolor brightblack ";.+"
+color white,red "\<TODO\>"

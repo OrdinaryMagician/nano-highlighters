@@ -1,0 +1,47 @@
+syntax "uc" "\.(uc)$"
+## default
+color brightwhite ".+"
+## keywords
+icolor cyan "\<A(bstract|dd|ddItem|lways|rchetype|rray|rrayCount|ssert|tomic|tomicWhenCooked|uto|utoCollapseCategories|utoExpandCategories|utomated)\>"
+icolor cyan "\<B(egin|ool|reak|utton|yte)\>"
+icolor cyan "\<C(ase|acheExempt|ache|lass|lassGroup|lient|oerce|ollapseCategories|onfig|onst|ontinue|ppStruct|ppText|rossLevelActive|rossLevelPassive)\>"
+icolor cyan "\<D(ataBinding|efault|efaultproperties|elegate|emoRecording|ependsOn|epreci?ated|o|ontAutoCollapseCategories|ontCollapseCategories|ontSortCategories|LLBind|LLImport|uplicateTransient)\>"
+icolor cyan "\<E(dFindable|ditConst|ditConstArray|ditFixedSize|ditHide|ditorOnly|ditInline|ditInlineNew|ditInlineNotify|ditInlineUse|ditTextBox|lse|mpty|nd|num|numCount|vent|xec|xpands|xport|xportStructs|xtends)\>"
+icolor cyan "\<F(alse|ilterEditorOnly|inal|ind|loat|or|orceScriptOrder|orEach|rom|unction)\>"
+icolor cyan "\<G(lobal|lobalConfig|oTo|uid)\>"
+icolor cyan "\<H(ideCategories|ideDropDown)\>"
+icolor cyan "\<I(f|gnores|mmutable|mmutableWhenCooked|mplements|mport|nherits|nit|nput|nsert|nsertItem|nstanced|nt|nterface|nterp|ntrinsic|nvariant|terator)\>"
+icolor cyan "\<K2(Call|Override|Pure)\>"
+icolor cyan "\<L(atent|ength|ocal|ocalized|ong)\>"
+icolor cyan "\<Map\>"
+icolor cyan "\<N(ame|ameOf|ative|ativeOnly|ativeReplication|ew|oExport|oExportHeader|oClear|oImport|one|onTransactional|onTransient|otEditInlineNew|otForConsole|otInstanced|otPlaceable|oUserCreate)\>"
+icolor cyan "\<O(perator|ptional|rderedArray|ut)\>"
+icolor cyan "\<P(arseConfig|erObjectConfig|erObjectLocalized|laceable|rivate|rivateWrite|reOperator|rotected|rotectedWrite|ointer|ostOperator|ublic)\>"
+icolor cyan "\<R(eliable|emove|emoveIndex|emoveItem|eplace|eplication|epNotify|epRetry|eturn|ot|ng)\>"
+icolor cyan "\<S(howCategories|tatic|tructCppText|tructDefaultProperties|tructDefaults|afeReplace|elf|erver|erializeText|imulated|ingular|kip|ort|tate|top|trictConfig|tring|truct|uper|witch)\>"
+icolor cyan "\<T(ransient|ravel|rue)\>"
+icolor cyan "\<U(nreliable|ntil)\>"
+icolor cyan "\<V(ar|ect|irtual)\>"
+icolor cyan "\<W(hile|ithin)\>"
+## labels
+icolor brightyellow "^[A-Z]+:"
+## operators
+color yellow "[.:;,+*|=!%?$@]" "<" ">" "/" "-" "&"
+## numbers
+icolor brightyellow "\<[-+]?([0-9]*|0x[0-9A-F]+|[0-9]+\.[0-9]*|[0-9]*\.[0-9]+)\>"
+## parentheses and braces
+color white "[(){}]" "\[" "\]"
+## strings
+color brightgreen "<[^= 	]*>" ""(\\.|[^"])*""
+## escapes
+color green "\\([abfnrtv\\\'\"\?0e]|0[0-7]{3,3}|x[0-9a-fA-F]{2,2}|u[0-9a-fA-F]{4,4})"
+## names
+color brightcyan "<[^=         ]*>" "'(\\.|[^'])*'"
+## trailing whitespace, leading spaces
+color ,green "[[:space:]]+$" "^\[[:space:]]* +"
+## comments
+color green "(^|[[:space:]])//.*"
+color green start="(^|[^/])/\*" end="\*/"
+color brightgreen,red "\<TODO\>"
+## compiler directives
+icolor brightblack "^#(Call|Error|Exec|Include|Linenumber).+$"
