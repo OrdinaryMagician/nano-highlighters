@@ -31,7 +31,7 @@ color brightyellow "\<(true|false)\>"
 ## parentheses and braces
 color white "[(){}]" "\[" "\]"
 ## strings
-color brightgreen "<[^=-]*>" "L?"(\\.|[^"])*""
+color brightgreen "<[^ =-]*>" "L?"(\\.|[^"])*""
 color brightgreen "'([^'\]|(\\["'abfnrtv\\]))'" "'\\(([0-3]?[0-7]{1,2}))'" "'\\x[0-9A-Fa-f]{1,2}'"
 ## printf escapes
 # TODO
