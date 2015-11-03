@@ -31,7 +31,7 @@ color white "[(){}]" "\[" "\]"
 ## macros
 color cyan "^[[:space:]]*#[[:space:]]*(define|include|(un|ifn?)def|endif|el(if|se)|if|warning|error|pragma)" "(\<defined\>|##?)"
 ## strings
-color brightgreen "<[^=         ]*>" "L?"(\\.|[^"])*""
+color brightgreen "<[^=-]*>" "L?"(\\.|[^"])*""
 color brightgreen "'([^'\]|(\\["'abfnrtv\\]))'" "'\\(([0-3]?[0-7]{1,2}))'" "'\\x[0-9A-Fa-f]{1,2}'"
 ## printf escapes
 # TODO
