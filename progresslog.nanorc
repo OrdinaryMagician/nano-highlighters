@@ -1,4 +1,4 @@
-syntax "progresslog" "^progresslog$"
+syntax "progresslog" "progresslog$"
 ## default
 color brightblack ".+"
 ## labels

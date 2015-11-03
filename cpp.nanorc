@@ -1,4 +1,4 @@
-syntax "cpp" "\.c(c|pp)$" "\.h(h|pp)$"
+syntax "cpp" "\.c(c|pp|xx)$" "\.h(h|pp|xx)$"
 ## default
 color brightwhite ".+"
 ## assume these are macro constants
